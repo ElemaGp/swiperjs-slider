@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const [movies, setMovies] = useState(""); //for storing the fetched movies
@@ -43,7 +44,7 @@ const getMovies = async (searchTerm, searchType) =>{
             return(
                 <SwiperSlide className="card" key={imdbID}>
                     <div className="imgWrapper">
-                    <img src={Poster} alt="pictures" className="cardImage" />
+                        <img src={Poster} alt="pictures" className="cardImage" />
                     </div>
                     <div>
                         <p>Title: {Title}</p>
@@ -58,6 +59,8 @@ const getMovies = async (searchTerm, searchType) =>{
         }
             
         </Swiper>
+
+        <Link to="/multipleslides">Go to the page that displays different elements for big and small screens</Link>
 </div>
   )
 }
